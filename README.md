@@ -1,0 +1,2 @@
+# CHARTIST-BOT
+Bot trading 
