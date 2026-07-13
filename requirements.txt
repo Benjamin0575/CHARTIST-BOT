@@ -1,0 +1,16 @@
+websocket-client==11.0.3
+aiohttp==3.9.1
+asyncio-contextmanager==1.0.0
+numpy==1.24.3
+pandas==2.0.3
+scipy==1.11.2
+requests==2.31.0
+python-telegram-bot==20.3
+pydantic==2.3.0
+pyyaml==6.0.1
+python-dotenv==1.0.0
+ta==0.10.2
+talib==0.4.28
+plotly==5.17.0
+dash==2.14.1
+dash-bootstrap-components==1.5.0

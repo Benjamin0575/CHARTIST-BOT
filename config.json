@@ -1,0 +1,100 @@
+{
+  "app": {
+    "name": "CHARTIST-BOT",
+    "version": "1.0.0",
+    "timezone": "UTC"
+  },
+  
+  "deriv": {
+    "api_endpoint": "wss://ws.derivws.com/websockets/v3",
+    "app_id": "YOUR_DERIV_APP_ID",
+    "api_token": "YOUR_DERIV_API_TOKEN",
+    "account_type": "real"
+  },
+
+  "trading": {
+    "pairs": [
+      "BOOM1000",
+      "BOOM300",
+      "XAUUSD",
+      "VOLATILITY100",
+      "VOLATILITY75",
+      "XAGUSD",
+      "EURUSD",
+      "GBPUSD",
+      "DAX",
+      "SPX500"
+    ],
+    "timeframes": ["5m", "15m"],
+    "risk_per_trade_percent": 1.5,
+    "max_daily_trades": 20,
+    "max_concurrent_positions": 3,
+    "max_daily_loss_percent": 5.0
+  },
+
+  "pattern_detection": {
+    "enabled_patterns": ["head_shoulders", "double_top_bottom", "triangles"],
+    "sensitivity": "medium",
+    "confirmation_strength": "strong",
+    "lookback_bars": 50
+  },
+
+  "confirmation": {
+    "multi_timeframe": true,
+    "min_tf": "5m",
+    "max_tf": "15m",
+    "pullback_required": true,
+    "pullback_percent": 38.2,
+    "atr_multiplier": 1.5
+  },
+
+  "position_sizing": {
+    "method": "fixed_risk_percent",
+    "risk_percent": 1.5,
+    "kelly_enabled": false,
+    "max_position_size_percent": 5.0
+  },
+
+  "take_profit_stop_loss": {
+    "method": "combination",
+    "atr_enabled": true,
+    "atr_multiplier_tp": 2.5,
+    "atr_multiplier_sl": 1.2,
+    "min_risk_reward_ratio": 1.5,
+    "trailing_stop_enabled": false
+  },
+
+  "alerts": {
+    "telegram_enabled": true,
+    "telegram_bot_token": "YOUR_TELEGRAM_BOT_TOKEN",
+    "telegram_chat_id": "YOUR_TELEGRAM_CHAT_ID",
+    "alert_on_pattern_detection": true,
+    "alert_on_trade_entry": true,
+    "alert_on_trade_exit": true,
+    "alert_on_errors": true
+  },
+
+  "backtesting": {
+    "enabled": true,
+    "start_date": "2024-01-01",
+    "end_date": "2024-12-31",
+    "initial_balance": 10000,
+    "commission_percent": 0.05
+  },
+
+  "optimization": {
+    "enabled": true,
+    "search_space": {
+      "atr_multiplier_tp": [2.0, 2.5, 3.0, 3.5],
+      "atr_multiplier_sl": [1.0, 1.2, 1.5],
+      "pullback_percent": [23.6, 38.2, 50.0, 61.8],
+      "kelly_enabled": [true, false]
+    }
+  },
+
+  "logging": {
+    "level": "INFO",
+    "log_file": "logs/chartist_bot.log",
+    "max_log_size_mb": 100
+  }
+}
